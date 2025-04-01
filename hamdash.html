@@ -27,7 +27,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Ham Radio Dashboard</title>
+    <title>Orthodox Dashboard</title>
     <!--
 	Hamdash
 	License: MIT
@@ -1661,7 +1661,6 @@ var tileDelay = ${JSON.stringify(settings.aImages.map(item => item[2]), null, 2)
       function updateTopBar() {
         const now = new Date();
         const localDate = now.toLocaleDateString("en-US", {
-          weekday: "long",
           month: "long",
           day: "numeric",
         });
@@ -1673,15 +1672,24 @@ var tileDelay = ${JSON.stringify(settings.aImages.map(item => item[2]), null, 2)
           timeZoneName: "short",
         });
 
-        const utcDate = now.toISOString().slice(0, 10);
-        const utcTime = now.toISOString().slice(11, 19) + " UTC";
+        let d = new Date();
+        d.setDate(d.getDate() - 13);
+
+        const utcDate = d.toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+        });
+        const utcTime = now.toLocaleDateString("en-US", {
+          weekday: "long",
+        });
+       // const utcTime = now.toISOString().slice(11, 19) + " UTC";
 
         const topBarLeft = document.getElementById("topBarLeft");
-        topBarLeft.textContent = `${localDate} - ${localTime}`;
+        topBarLeft.textContent = `O.S. ${utcDate} / N.S.${localDate} `;
         const topBarCenter = document.getElementById("topBarCenter");
         topBarCenter.textContent = topBarCenterText;
         const topBarRight = document.getElementById("topBarRight");
-        topBarRight.textContent = `${utcDate} ${utcTime}`;
+        topBarRight.textContent = `${utcTime} ${localTime}`;
       }
 
       // Update every second
