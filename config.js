@@ -14,7 +14,7 @@ var aURL = [
   [
     "#8ff0a4",
     "Calendar",
-    "https://www.stnectarios.org/EasternRiteCalendar/",
+    "calendar.html",
     1,
     "L"
   ],
@@ -70,9 +70,23 @@ var aURL = [
   [
     "#8ff0a4",
     "Orthodox Liturgical Texts  And Resources",
-    "http://www.saintjonah.org/services/",
+    "stjonah.html",
     1,
     "L"
+  ],
+  [
+    "#f66151",
+    "Ancient Faith Radio Talk",
+    "AFtalk.html",
+    1,
+    "R"
+  ],
+  [
+    "#f66151",
+    "Ancient Faith Radio Music",
+    "AFmusic.html",
+    1,
+    "R"
   ]
 ];
 
